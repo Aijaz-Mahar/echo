@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- SEO META TAGS -->
 <meta name="description" content="Latest national and international news, sports updates, technology trends, health news and breaking headlines from reliable sources. Stay informed with news.pakrail.online.">
 
 <meta name="keywords" content="latest news, breaking news, national news, international news, sports news, technology news, health news, Pakistan news, world news">
@@ -11,14 +10,12 @@
 
 <link rel="canonical" href="https://echo.emahar.com">
 
-<!-- Open Graph (Facebook, WhatsApp) -->
 <meta property="og:title" content="Latest News | National, International, Sports & Technology">
 <meta property="og:description" content="Read latest news from Pakistan and around the world including sports, technology and health updates.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://echo.emahar.com">
 <meta property="og:site_name" content="echo.emahar.com">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Latest News Updates">
 <meta name="twitter:description" content="National, international, sports, technology and health news from trusted sources.">
@@ -30,7 +27,6 @@
 <meta property="og:title" content="تازہ خبریں | قومی، بین الاقوامی، کھیل اور ٹیکنالوجی">
 <meta property="og:description" content="پاکستان اور دنیا کی تازہ ترین خبریں ایک ہی جگہ پر۔">
 
-    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>echo.emahar.com</title>
@@ -193,7 +189,7 @@ footer a{
 .ad-left,
 .ad-right {
     position:fixed;
-    top:top: 0;
+    top: 0;
     width:160px;
     z-index:999;
     text-align:center;
@@ -212,7 +208,6 @@ footer a{
 
 <body>
 
-<!-- LEFT VERTICAL AD -->
 <div class="ad-left">
 <script>
   atOptions = {
@@ -238,7 +233,6 @@ footer a{
 
 </div>
 
-<!-- RIGHT VERTICAL AD -->
 <div class="ad-right">
 <script>
   atOptions = {
@@ -280,7 +274,6 @@ footer a{
     <a href="sports.html">Sports</a>
     <a href="technology.html">Technology</a>
     <a href="entertainment.html">Entertainment</a>
-     
 </nav>
 
 <div id="newsIntro" style="text-align:center;color:#555;font-size:1rem;margin:15px 0;">
@@ -293,7 +286,7 @@ Latest news from your selected language.
         <p>Loading news...</p>
     </div>
 </div>
-<!-- Native 3:1 Banner Below News Grid -->
+
 <div id="native-ad-container" style="max-width:1200px; margin:20px auto; text-align:center;">
   <script async="async" data-cfasync="false" 
     src="https://pl28668792.effectivegatecpm.com/87f505dcd60d2b6b50504ac3dd13f12a/invoke.js">
@@ -304,45 +297,47 @@ Latest news from your selected language.
 <script>
 const feeds = {
     sindhi: ['https://pahenjiakhbar.com/feed/', 'https://dailyibrat.com/feed/', 'https://awamiawaz.pk/feed/'],
-   urdu:[
-'https://feeds.bbci.co.uk/urdu/rss.xml',
-'https://www.express.pk/feed',
-'https://independenturdu.com/rss.xml',
-'https://roznamakhabrein.com/feed/'
-],
+    urdu:[
+        'https://feeds.bbci.co.uk/urdu/rss.xml',
+        'https://www.express.pk/feed',
+        'https://independenturdu.com/rss.xml',
+        'https://roznamakhabrein.com/feed/'
+    ],
     arabic:[
-'https://www.aljazeera.net/aljazeerarss.xml',
-'https://rss.dw.com/xml/rss-ar-all',
-'https://aawsat.com/rss-feed',
-'https://www.albawaba.com/rss',
-'https://arabic.cnn.com/rss'
-],
-   english:[
-'https://feeds.bbci.co.uk/news/rss.xml',
-'https://www.aljazeera.com/xml/rss/all.xml',
-'https://rss.dw.com/xml/rss-en-all'
-],
-    german:['https://rss.dw.com/xml/rss-de-all',
-'https://www.spiegel.de/schlagzeilen/index.rss',
-'https://www.faz.net/rss/aktuell/'
-]
+        'https://www.aljazeera.net/aljazeerarss.xml',
+        'https://rss.dw.com/xml/rss-ar-all',
+        'https://aawsat.com/rss-feed',
+        'https://www.albawaba.com/rss',
+        'https://arabic.cnn.com/rss'
+    ],
+    english:[
+        'https://feeds.bbci.co.uk/news/rss.xml',
+        'https://www.aljazeera.com/xml/rss/all.xml',
+        'https://rss.dw.com/xml/rss-en-all'
+    ],
+    german:[
+        'https://rss.dw.com/xml/rss-de-all',
+        'https://www.spiegel.de/schlagzeilen/index.rss',
+        'https://www.faz.net/rss/aktuell/'
+    ]
 };
 
 const intros = {
     sindhi: 'news.pakrail.online اوهان تائين تازيون خبرون معتبر ذريعن کان پهچائي ٿو.',
     urdu: 'news.pakrail.online آپ تک تازہ ترین خبریں معتبر ذرائع سے پہنچاتا ہے۔',
     english: 'news.pakrail.online delivers latest news.',
-    // add others...
+    arabic: 'news.pakrail.online يقدم لكم آخر الأخبار من مصادر موثوقة.',
+    german: 'news.pakrail.online liefert aktuelle Nachrichten.'
 };
 
 const headings = {
     sindhi: 'تازيون خبرون',
     urdu: 'تازہ خبریں',
     english: 'Latest News',
-    // add others...
+    arabic: 'آخر الأخبار',
+    german: 'Aktuelle Nachrichten'
 };
 
-// Add a helper for the "Read More" text in different languages
 const readMoreText = {
     sindhi: 'وڌيڪ پڙهو',
     urdu: 'مزید پڑھیں',
@@ -353,7 +348,8 @@ const readMoreText = {
 
 async function fetchRSS(url) {
     try {
-        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+        // Adding a timestamp to bypass server-side caching
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&_=${new Date().getTime()}`);
         const data = await res.json();
         return data.items || [];
     } catch (e) { return []; }
@@ -361,36 +357,51 @@ async function fetchRSS(url) {
 
 async function loadNews(language) {
     const container = document.getElementById('newsContainer');
-    container.innerHTML = '<p>Loading...</p>';
+    container.innerHTML = '<p style="text-align:center; grid-column:1/-1;">Loading...</p>';
     
     let allNews = [];
     for (const feed of feeds[language]) {
-        allNews = allNews.concat(await fetchRSS(feed));
+        const items = await fetchRSS(feed);
+        allNews = allNews.concat(items);
     }
     
+    // Sort by publication date (descending)
     allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
     container.innerHTML = '';
 
+    if (allNews.length === 0) {
+        container.innerHTML = '<p style="text-align:center; grid-column:1/-1;">Could not load news. Please try again later.</p>';
+        return;
+    }
+
     allNews.forEach((item, i) => {
+        // Extraction logic for images embedded in descriptions (common in Sindhi WordPress feeds)
         let img = item.thumbnail || '';
+        if (!img && item.description) {
+            const match = item.description.match(/<img[^>]+src="([^">]+)"/);
+            if (match) img = match[1];
+        }
+
         const card = document.createElement('div');
         card.className = 'news-card';
         if (i < 3) card.classList.add('featured');
         
+        // Remove HTML tags for snippet
+        const cleanSnippet = item.description?.replace(/<[^>]*>/g, '').substring(0, 120) || "";
+        
         card.innerHTML = `
-            ${img ? `<img src="${img}">` : ''}
+            ${img ? `<img src="${img}" alt="news" onerror="this.style.display='none'">` : ''}
             <div class="news-title">${item.title}</div>
-            <div class="news-snippet">${item.description?.replace(/<[^>]*>/g, '').substring(0, 120)}...</div>
-            <div class="news-link"><a href="${item.link}" target="_blank">${readMoreText[language]}</a></div>`;
+            <div class="news-snippet">${cleanSnippet}...</div>
+            <div class="news-link"><a href="${item.link}" target="_blank">${readMoreText[language] || 'Read more'}</a></div>`;
         container.appendChild(card);
     });
 
-    document.getElementById('newsIntro').textContent = intros[language];
-    document.getElementById('newsHeading').textContent = headings[language];
+    document.getElementById('newsIntro').textContent = intros[language] || intros['english'];
+    document.getElementById('newsHeading').textContent = headings[language] || headings['english'];
     document.body.style.direction = (language === 'urdu' || language === 'arabic' || language === 'sindhi') ? 'rtl' : 'ltr';
 }
 
-// Initialize with current selector value (which is now Sindhi)
 let selector = document.getElementById('languageSelector');
 loadNews(selector.value);
 
@@ -398,18 +409,20 @@ selector.addEventListener('change', e => {
     loadNews(e.target.value);
 });
 </script>
-    <div class="ad-banner-bottom">
+
+<div class="ad-banner-bottom">
     <script>
-  atOptions = {
-    'key' : '113707015c3d09086415e58915fb1573',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/113707015c3d09086415e58915fb1573/invoke.js"></script>
+      atOptions = {
+        'key' : '113707015c3d09086415e58915fb1573',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/113707015c3d09086415e58915fb1573/invoke.js"></script>
 </div>
+
 <script>
 (function(jqweig){
 var d = document,
@@ -422,6 +435,7 @@ s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
+
 <footer>
   <a href="about.html">About</a> |
   <a href="privacy">Privacy Policy</a> |
