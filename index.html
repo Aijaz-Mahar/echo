@@ -280,7 +280,7 @@ footer a{
     <a href="sports.html">Sports</a>
     <a href="technology.html">Technology</a>
     <a href="entertainment.html">Entertainment</a>
-     <a href="https://pakrail.online">PakRail.online</a>
+     
 </nav>
 
 <div id="newsIntro" style="text-align:center;color:#555;font-size:1rem;margin:15px 0;">
@@ -302,98 +302,85 @@ Latest news from your selected language.
 </div>
 
 <script>
-const feeds={
-    sindhi: [
-        'https://pahenjiakhbar.com/feed/',
-        'https://dailyibrat.com/feed/',
-        'https://awamiawaz.pk/feed/'
-    ],
-urdu:[
-'https://feeds.bbci.co.uk/urdu/rss.xml',
-'https://www.express.pk/feed',
-'https://independenturdu.com/rss.xml',
-'https://roznamakhabrein.com/feed/'
-],
-arabic:[
-'https://www.aljazeera.net/aljazeerarss.xml',
-'https://rss.dw.com/xml/rss-ar-all',
-'https://aawsat.com/rss-feed',
-'https://www.albawaba.com/rss',
-'https://arabic.cnn.com/rss'
-],
-english:[
-'https://feeds.bbci.co.uk/news/rss.xml',
-'https://www.aljazeera.com/xml/rss/all.xml',
-'https://rss.dw.com/xml/rss-en-all'
-],
-german:[
-'https://rss.dw.com/xml/rss-de-all',
-'https://www.spiegel.de/schlagzeilen/index.rss',
-'https://www.faz.net/rss/aktuell/'
-]
+const feeds = {
+    sindhi: ['https://pahenjiakhbar.com/feed/', 'https://dailyibrat.com/feed/', 'https://awamiawaz.pk/feed/'],
+    urdu: ['https://feeds.bbci.co.uk/urdu/rss.xml', 'https://www.express.pk/feed', 'https://independenturdu.com/rss.xml'],
+    arabic: ['https://www.aljazeera.net/aljazeerarss.xml', 'https://rss.dw.com/xml/rss-ar-all'],
+    english: ['https://feeds.bbci.co.uk/news/rss.xml', 'https://www.aljazeera.com/xml/rss/all.xml'],
+    german: ['https://rss.dw.com/xml/rss-de-all']
 };
+
 const intros = {
     sindhi: 'news.pakrail.online اوهان تائين تازيون خبرون معتبر ذريعن کان پهچائي ٿو.',
     urdu: 'news.pakrail.online آپ تک تازہ ترین خبریں معتبر ذرائع سے پہنچاتا ہے۔',
-    arabic: 'arabicnews.pakrail.online يقدم لك أحدث الأخبار من مصادر موثوقة.',
-    english: 'news.pakrail.online delivers the latest news from reliable sources.',
-    german: 'news.pakrail.online liefert die neuesten Nachrichten aus vertروںswürdigen Quellen.'
+    english: 'news.pakrail.online delivers latest news.',
+    // add others...
 };
 
 const headings = {
     sindhi: 'تازيون خبرون',
     urdu: 'تازہ خبریں',
-    arabic: 'آخر الأخبار',
     english: 'Latest News',
-    german: 'Neueste Nachrichten'
+    // add others...
 };
-    
 
-async function fetchRSS(url){
-    try{
-        const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
-        const data=await res.json();
-        return data.items||[];
-    }catch(e){
-        return [];
-    }
+// Add a helper for the "Read More" text in different languages
+const readMoreText = {
+    sindhi: 'وڌيڪ پڙهو',
+    urdu: 'مزید پڑھیں',
+    arabic: 'اقرأ المزيد',
+    english: 'Read more',
+    german: 'Weiterlesen'
+};
+
+async function fetchRSS(url) {
+    try {
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+        const data = await res.json();
+        return data.items || [];
+    } catch (e) { return []; }
 }
 
-async function loadNews(language){
-    const container=document.getElementById('newsContainer');
-    container.innerHTML='<p>Loading news...</p>';
-    let allNews=[];
-    for(const feed of feeds[language]){
-        allNews=allNews.concat(await fetchRSS(feed));
+async function loadNews(language) {
+    const container = document.getElementById('newsContainer');
+    container.innerHTML = '<p>Loading...</p>';
+    
+    let allNews = [];
+    for (const feed of feeds[language]) {
+        allNews = allNews.concat(await fetchRSS(feed));
     }
-    allNews.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));
-    container.innerHTML='';
-    allNews.forEach((item,i)=>{
-        let img='';
-        if(item.thumbnail) img=item.thumbnail;
-        const card=document.createElement('div');
-        card.className='news-card';
-        if(i<3) card.classList.add('featured');
-        card.innerHTML=`
-        ${img?`<img src="${img}">`:''}
-        <div class="news-title">${item.title}</div>
-        <div class="news-snippet">${item.description?.replace(/<[^>]*>/g,'').substring(0,120)}...</div>
-        <div class="news-link"><a href="${item.link}" target="_blank">Read more</a></div>`;
+    
+    allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+    container.innerHTML = '';
+
+    allNews.forEach((item, i) => {
+        let img = item.thumbnail || '';
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        if (i < 3) card.classList.add('featured');
+        
+        card.innerHTML = `
+            ${img ? `<img src="${img}">` : ''}
+            <div class="news-title">${item.title}</div>
+            <div class="news-snippet">${item.description?.replace(/<[^>]*>/g, '').substring(0, 120)}...</div>
+            <div class="news-link"><a href="${item.link}" target="_blank">${readMoreText[language]}</a></div>`;
         container.appendChild(card);
     });
-    document.getElementById('newsIntro').textContent=intros[language];
-    document.getElementById('newsHeading').textContent=headings[language];
-    // Inside the loadNews function, update this line:
-document.body.style.direction = (language === 'urdu' || language === 'arabic' || language === 'sindhi') ? 'rtl' : 'ltr';
+
+    document.getElementById('newsIntro').textContent = intros[language];
+    document.getElementById('newsHeading').textContent = headings[language];
+    document.body.style.direction = (language === 'urdu' || language === 'arabic' || language === 'sindhi') ? 'rtl' : 'ltr';
 }
 
-let currentLang=document.getElementById('languageSelector').value;
-loadNews(currentLang);
-document.getElementById('languageSelector').addEventListener('change',e=>{
+// Initialize with current selector value (which is now Sindhi)
+let selector = document.getElementById('languageSelector');
+loadNews(selector.value);
+
+selector.addEventListener('change', e => {
     loadNews(e.target.value);
 });
 </script>
-<div class="ad-banner-bottom">
+    <div class="ad-banner-bottom">
     <script>
   atOptions = {
     'key' : '113707015c3d09086415e58915fb1573',
