@@ -383,7 +383,8 @@ async function loadNews(language){
     });
     document.getElementById('newsIntro').textContent=intros[language];
     document.getElementById('newsHeading').textContent=headings[language];
-    document.body.style.direction=(language==='urdu'||language==='arabic')?'rtl':'ltr';
+    // Inside the loadNews function, update this line:
+document.body.style.direction = (language === 'urdu' || language === 'arabic' || language === 'sindhi') ? 'rtl' : 'ltr';
 }
 
 let currentLang=document.getElementById('languageSelector').value;
