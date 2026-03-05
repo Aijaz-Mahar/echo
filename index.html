@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO META TAGS -->
+<meta name="description" content="Latest national and international news, sports updates, technology trends, health news and breaking headlines from reliable sources. Stay informed with news.pakrail.online.">
+
+<meta name="keywords" content="latest news, breaking news, national news, international news, sports news, technology news, health news, Pakistan news, world news">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="news.pakrail.online">
+
+<link rel="canonical" href="https://news.pakrail.online/">
+
+<!-- Open Graph (Facebook, WhatsApp) -->
+<meta property="og:title" content="Latest News | National, International, Sports & Technology">
+<meta property="og:description" content="Read latest news from Pakistan and around the world including sports, technology and health updates.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://news.pakrail.online/">
+<meta property="og:site_name" content="news.pakrail.online">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Latest News Updates">
+<meta name="twitter:description" content="National, international, sports, technology and health news from trusted sources.">
+
+<meta name="description" content="پاکستان اور دنیا کی تازہ ترین خبریں، قومی، بین الاقوامی، کھیل، ٹیکنالوجی اور صحت کی مستند خبریں news.pakrail.online پر پڑھیں۔">
+
+<meta name="keywords" content="تازہ خبریں، پاکستان نیوز، قومی خبریں، بین الاقوامی خبریں، کھیلوں کی خبریں، ٹیکنالوجی نیوز، صحت کی خبریں">
+
+<meta property="og:title" content="تازہ خبریں | قومی، بین الاقوامی، کھیل اور ٹیکنالوجی">
+<meta property="og:description" content="پاکستان اور دنیا کی تازہ ترین خبریں ایک ہی جگہ پر۔">
+
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>news.pakrail.online</title>
+
+<style>
+/* Body */
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    direction:ltr;
+}
+
+/* ===== ONLY ADDITION: reserve space for side ads ===== */
+@media (min-width: 1200px) {
+    body {
+        padding-left: 170px;
+        padding-right: 170px;
+    }
+}
+/* ===================================================== */
+
+/* Header */
+header {
+    background:#2e7d32;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    position:relative;
+}
+
+/* Language selector */
+#languageSelector {
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:5px 10px;
+    font-size:14px;
+    border-radius:4px;
+    border:none;
+}
+
+/* Navigation */
+nav {
+    background:#388e3c;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav a {
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    margin:2px;
+    font-size:14px;
+    transition:background 0.2s;
+}
+nav a:hover {
+    background:#2e7d32;
+    border-radius:4px;
+}
+
+/* News section */
+.news-section {
+    max-width:1200px;
+    margin:20px auto;
+    padding:10px;
+}
+.news-section h2 {
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+/* News grid */
+#newsContainer {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+    gap:15px;
+}
+
+/* News cards */
+.news-card {
+    background:#fff;
+    border-radius:6px;
+    padding:12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition: transform 0.2s;
+}
+.news-card:hover { transform: scale(1.02); }
+
+.news-card img {
+    width:100%;
+    border-radius:6px;
+    margin-bottom:8px;
+    object-fit:cover;
+    max-height:160px;
+}
+
+.news-card.featured {
+    grid-column: span 2;
+}
+.news-card.featured img {
+    max-height:250px;
+}
+
+.news-title {
+    font-weight:bold;
+    color:#2e7d32;
+    margin-bottom:8px;
+    font-size:1rem;
+}
+.news-snippet {
+    font-size:0.95rem;
+    line-height:1.5;
+    color:#333;
+    margin-bottom:10px;
+}
+.news-link a {
+    color:#1a73e8;
+    text-decoration:none;
+}
+.news-link a:hover {
+    text-decoration:underline;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .news-card.featured { grid-column: span 1; }
+}
+
+/* Footer */
+footer{
+    background:#333;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    font-size:14px;
+}
+footer a{
+    color:#fff;
+    margin:0 8px;
+    text-decoration:none;
+}
+
+/* Bottom ad */
+.ad-banner-bottom {
+    max-width:100%;
+    text-align:center;
+    margin:10px 0;
+}
+
+/* LEFT & RIGHT VERTICAL ADS (unchanged) */
+.ad-left,
+.ad-right {
+    position:fixed;
+    top:top: 0;
+    width:160px;
+    z-index:999;
+    text-align:center;
+}
+.ad-left { left:5px; }
+.ad-right { right:5px; }
+
+@media(max-width:1200px){
+    .ad-left,
+    .ad-right {
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LEFT VERTICAL AD -->
+<div class="ad-left">
+<script>
+  atOptions = {
+    'key' : 'a319757ed9dc69be3e33a41c46f05f48',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/a319757ed9dc69be3e33a41c46f05f48/invoke.js"></script>
+
+    <script>
+  atOptions = {
+    'key' : 'b7b02af929abdc41a481cc90abaaa8d2',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/b7b02af929abdc41a481cc90abaaa8d2/invoke.js"></script>
+
+</div>
+
+<!-- RIGHT VERTICAL AD -->
+<div class="ad-right">
+<script>
+  atOptions = {
+    'key' : 'a319757ed9dc69be3e33a41c46f05f48',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/a319757ed9dc69be3e33a41c46f05f48/invoke.js"></script>
+
+    <script>
+  atOptions = {
+    'key' : 'b7b02af929abdc41a481cc90abaaa8d2',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/b7b02af929abdc41a481cc90abaaa8d2/invoke.js"></script>
+
+</div>
+
+<header>
+    news.pakrail.online
+    <select id="languageSelector">
+        <option value="urdu" selected>اردو</option>
+        <option value="arabic">العربية</option>
+        <option value="english">English</option>
+        <option value="german">Deutsch</option>
+    </select>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="national.html">National</a>
+    <a href="international.html">International</a>
+    <a href="sports.html">Sports</a>
+    <a href="technology.html">Technology</a>
+    <a href="entertainment.html">Entertainment</a>
+     <a href="https://pakrail.online">PakRail.online</a>
+</nav>
+
+<div id="newsIntro" style="text-align:center;color:#555;font-size:1rem;margin:15px 0;">
+Latest news from your selected language.
+</div>
+
+<div class="news-section">
+    <h2 id="newsHeading">Latest News</h2>
+    <div id="newsContainer">
+        <p>Loading news...</p>
+    </div>
+</div>
+<!-- Native 3:1 Banner Below News Grid -->
+<div id="native-ad-container" style="max-width:1200px; margin:20px auto; text-align:center;">
+  <script async="async" data-cfasync="false" 
+    src="https://pl28668792.effectivegatecpm.com/87f505dcd60d2b6b50504ac3dd13f12a/invoke.js">
+  </script>
+  <div id="container-87f505dcd60d2b6b50504ac3dd13f12a"></div>
+</div>
+
+<script>
+const feeds={
+urdu:[
+'https://feeds.bbci.co.uk/urdu/rss.xml',
+'https://www.express.pk/feed',
+'https://independenturdu.com/rss.xml',
+'https://roznamakhabrein.com/feed/'
+],
+arabic:[
+'https://www.aljazeera.net/aljazeerarss.xml',
+'https://rss.dw.com/xml/rss-ar-all',
+'https://aawsat.com/rss-feed',
+'https://www.albawaba.com/rss',
+'https://arabic.cnn.com/rss'
+],
+english:[
+'https://feeds.bbci.co.uk/news/rss.xml',
+'https://www.aljazeera.com/xml/rss/all.xml',
+'https://rss.dw.com/xml/rss-en-all'
+],
+german:[
+'https://rss.dw.com/xml/rss-de-all',
+'https://www.spiegel.de/schlagzeilen/index.rss',
+'https://www.faz.net/rss/aktuell/'
+]
+};
+
+const intros={
+urdu:'news.pakrail.online آپ تک تازہ ترین خبریں معتبر ذرائع سے پہنچاتا ہے۔',
+arabic:'arabicnews.pakrail.online يقدم لك أحدث الأخبار من مصادر موثوقة.',
+english:'news.pakrail.online delivers the latest news from reliable sources.',
+german:'news.pakrail.online liefert die neuesten Nachrichten aus vertrauenswürdigen Quellen.'
+};
+
+const headings={
+urdu:'تازہ خبریں',
+arabic:'آخر الأخبار',
+english:'Latest News',
+german:'Neueste Nachrichten'
+};
+
+async function fetchRSS(url){
+    try{
+        const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+        const data=await res.json();
+        return data.items||[];
+    }catch(e){
+        return [];
+    }
+}
+
+async function loadNews(language){
+    const container=document.getElementById('newsContainer');
+    container.innerHTML='<p>Loading news...</p>';
+    let allNews=[];
+    for(const feed of feeds[language]){
+        allNews=allNews.concat(await fetchRSS(feed));
+    }
+    allNews.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));
+    container.innerHTML='';
+    allNews.forEach((item,i)=>{
+        let img='';
+        if(item.thumbnail) img=item.thumbnail;
+        const card=document.createElement('div');
+        card.className='news-card';
+        if(i<3) card.classList.add('featured');
+        card.innerHTML=`
+        ${img?`<img src="${img}">`:''}
+        <div class="news-title">${item.title}</div>
+        <div class="news-snippet">${item.description?.replace(/<[^>]*>/g,'').substring(0,120)}...</div>
+        <div class="news-link"><a href="${item.link}" target="_blank">Read more</a></div>`;
+        container.appendChild(card);
+    });
+    document.getElementById('newsIntro').textContent=intros[language];
+    document.getElementById('newsHeading').textContent=headings[language];
+    document.body.style.direction=(language==='urdu'||language==='arabic')?'rtl':'ltr';
+}
+
+let currentLang=document.getElementById('languageSelector').value;
+loadNews(currentLang);
+document.getElementById('languageSelector').addEventListener('change',e=>{
+    loadNews(e.target.value);
+});
+</script>
+<div class="ad-banner-bottom">
+    <script>
+  atOptions = {
+    'key' : '113707015c3d09086415e58915fb1573',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/113707015c3d09086415e58915fb1573/invoke.js"></script>
+</div>
+<script>
+(function(jqweig){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jqweig || {};
+s.src = "\/\/experienced-stupid.com\/b\/XhV.s_dPGKlG0\/Y\/Wycv\/feMm\/9YuWZ\/Ubl\/kjPwT\/YG3XOkDJI\/zkOvTAckt\/Nzjdc\/4HMljRQzw\/MzQN";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+<footer>
+  <a href="about.html">About</a> |
+  <a href="privacy">Privacy Policy</a> |
+  <a href="contact.html">Contact</a><br>
+  © 2026 news.pakrail.online
+</footer>
+
+</body>
+</html>
