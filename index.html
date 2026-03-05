@@ -349,8 +349,13 @@ const readMoreText = {
 async function fetchRSS(url) {
     try {
         // Adding a timestamp to bypass server-side caching
-        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&_=${new Date().getTime()}`);
-        const data = await res.json();
+        //const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&_=${new Date().getTime()}`);
+        //const data = await res.json();
+        // Replace the fetch line in your existing fetchRSS function with this:
+const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+const result = await res.json();
+// Allorigins returns the RSS as a string in result.contents, 
+// so you would need to parse it.
         return data.items || [];
     } catch (e) { return []; }
 }
